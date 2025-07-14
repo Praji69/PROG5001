@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class NumberOfMarksInput {
+public class statsStudents {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int numberOfMarks;
@@ -23,5 +23,7 @@ public class NumberOfMarksInput {
         } while (numberOfMarks <= 0);
 
         System.out.println("You will enter " + numberOfMarks + " marks.");
+        
+        scanner.close(); // Always good to close Scanner
     }
 }
