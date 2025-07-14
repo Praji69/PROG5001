@@ -27,3 +27,22 @@ public class statsStudents {
         scanner.close(); // Always good to close Scanner
     }
 }
+public class HighLowCalculator {
+    public static void main(String[] args) {
+        double[] marks = {28.5, 18.0, 30.0, 22.7, 16.3}; // Example input
+        double highest = marks[0];
+        double lowest = marks[0];
+
+        for (int i = 1; i < marks.length; i++) {
+            if (marks[i] > highest) {
+                highest = marks[i];
+            }
+            if (marks[i] < lowest) {
+                lowest = marks[i];
+            }
+        }
+
+        System.out.println("Highest mark: " + highest);
+        System.out.println("Lowest mark: " + lowest);
+    }
+}
