@@ -27,3 +27,27 @@ public class StudentStats {
                 input.next();
             }
         }
+
+        // Calculate statistics
+        double min = marks[0], max = marks[0], sum = 0;
+        for (double mark : marks) {
+            if (mark < min) min = mark;
+            if (mark > max) max = mark;
+            sum += mark;
+        }
+        double mean = sum / n;
+        
+        double variance = 0;
+        for (double mark : marks) {
+            variance += Math.pow(mark - mean, 2);
+        }
+        variance /= n;
+        
+        // Output results
+        System.out.println("\nStatistics:");
+        System.out.printf("Minimum: %.2f\n", min);
+        System.out.printf("Maximum: %.2f\n", max);
+        System.out.printf("Mean: %.2f\n", mean);
+        System.out.printf("Variance: %.2f\n", variance);
+    }
+}
