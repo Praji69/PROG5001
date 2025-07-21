@@ -4,11 +4,11 @@ public class StudentStats {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
-        // Input validation for number of marks
+        // Input validation
         System.out.print("Enter number of marks (N): ");
         while (!input.hasNextInt()) {
             System.out.println("Invalid input! Enter an integer.");
-            input.next(); // Clear invalid input
+            input.next();
         }
         int n = input.nextInt();
         
@@ -21,18 +21,13 @@ public class StudentStats {
                     if (mark >= 0 && mark <= 30) {
                         marks[i] = mark;
                         break;
-                    } else {
-                        System.out.print("Invalid! Re-enter mark " + (i+1) + " (0-30): ");
-                        continue; // Skip the rest and retry
                     }
-                } else {
-                    System.out.print("Invalid! Re-enter mark " + (i+1) + " (0-30): ");
-                    input.next(); // Clear invalid input
                 }
+                System.out.print("Invalid! Re-enter mark " + (i+1) + " (0-30): ");
+                input.next();
             }
         }
         
-        // Rest of the code remains the same...
         // Calculate statistics
         double min = marks[0], max = marks[0], sum = 0;
         for (double mark : marks) {
